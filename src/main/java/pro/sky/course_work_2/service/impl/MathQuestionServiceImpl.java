@@ -41,6 +41,6 @@ public class MathQuestionServiceImpl implements QuestionService {
     @Override
     public Question getRandomQuestion() {
         List<Question> collect = new ArrayList<>(repository.getAllQuestions());
-        return collect.get(new Random().nextInt(repository.getAllQuestions().size()));
+        return collect.get(RANDOM.nextInt(repository.getAllQuestions().size()));
     }
 }
