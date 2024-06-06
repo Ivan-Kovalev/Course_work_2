@@ -3,20 +3,20 @@ package pro.sky.course_work_2.model;
 import java.util.Objects;
 
 public class Question {
-    private final String question;
-    private final String answer;
+    private final String textQuestion;
+    private final String textAnswer;
 
-    public Question(String question, String answer) {
-        this.question = question;
-        this.answer = answer;
+    public Question(String textQuestion, String textAnswer) {
+        this.textQuestion = textQuestion;
+        this.textAnswer = textAnswer;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getTextQuestion() {
+        return textQuestion;
     }
 
-    public String getAnswer() {
-        return answer;
+    public String getTextAnswer() {
+        return textAnswer;
     }
 
     @Override
@@ -24,19 +24,19 @@ public class Question {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Question question1 = (Question) o;
-        return Objects.equals(question, question1.question) && Objects.equals(answer, question1.answer);
+        return Objects.equals(textQuestion, question1.textQuestion) && Objects.equals(textAnswer, question1.textAnswer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(question, answer);
+        return Objects.hash(textQuestion, textAnswer);
     }
 
     @Override
     public String toString() {
         return "Question{" +
-                "question='" + question + '\'' +
-                ", answer='" + answer + '\'' +
+                "question='" + textQuestion + '\'' +
+                ", answer='" + textAnswer + '\'' +
                 '}';
     }
 }

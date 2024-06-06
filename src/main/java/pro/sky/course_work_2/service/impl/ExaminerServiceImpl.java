@@ -27,7 +27,7 @@ public class ExaminerServiceImpl implements ExaminerService {
     public Collection<Question> getQuestions(int amount) {
         Set<Question> questions = new HashSet<>();
 
-        if (amount > (serviceJava.getAllQuestions().size() + serviceMath.getAllQuestions().size())) {
+        if (amount > getCountQuestions()) {
             throw new QuestionException("Нет столько вопросов");
         }
 
@@ -38,6 +38,10 @@ public class ExaminerServiceImpl implements ExaminerService {
             }
         }
         return questions;
+    }
+
+    private int getCountQuestions() {
+        return serviceJava.getAllQuestions().size() + serviceMath.getAllQuestions().size();
     }
 
 }
