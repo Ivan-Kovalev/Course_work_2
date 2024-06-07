@@ -17,18 +17,13 @@ import static pro.sky.course_work_2.test_utils.Constants.MATH_QUESTIONS;
 class ExaminerServiceImplTest {
 
     @Mock
-    private final QuestionService serviceJava;
+    private QuestionService serviceJava;
 
     @Mock
-    private final QuestionService serviceMath;
+    private QuestionService serviceMath;
 
     @InjectMocks
     private ExaminerServiceImpl service;
-
-    ExaminerServiceImplTest(JavaQuestionServiceImpl serviceJava, MathQuestionServiceImpl serviceMath) {
-        this.serviceJava = serviceJava;
-        this.serviceMath = serviceMath;
-    }
 
     @BeforeEach
     void setUp() {
