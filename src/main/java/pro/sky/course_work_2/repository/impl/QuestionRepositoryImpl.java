@@ -1,31 +1,29 @@
-package pro.sky.course_work_2.service.impl.repository;
+package pro.sky.course_work_2.repository.impl;
 
-import org.springframework.stereotype.Repository;
 import pro.sky.course_work_2.exception.QuestionException;
 import pro.sky.course_work_2.model.Question;
+import pro.sky.course_work_2.repository.QuestionRepository;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 
-@Repository
-public class JavaQuestionRepositoryImpl implements QuestionRepository {
+public class QuestionRepositoryImpl implements QuestionRepository {
+    private final Set<Question> questions;
 
-    private final Set<Question> questions = new HashSet<>();
+    public QuestionRepositoryImpl(Set<Question> questions) {
+        this.questions = questions;
+    }
 
-    @Override
     public Question add(String question, String answer) {
         return add(new Question(question, answer));
     }
 
-    @Override
     public Question add(Question question) {
         questions.add(question);
         return question;
     }
 
-    @Override
     public Question remove(Question question) {
         if (questions.remove(question)) {
             return question;
@@ -34,7 +32,6 @@ public class JavaQuestionRepositoryImpl implements QuestionRepository {
         }
     }
 
-    @Override
     public Collection<Question> getAllQuestions() {
         return Collections.unmodifiableCollection(questions);
     }

@@ -1,4 +1,4 @@
-package pro.sky.course_work_2.service.impl.repository;
+package pro.sky.course_work_2.repository;
 
 import pro.sky.course_work_2.model.Question;
 

@@ -1,6 +1,5 @@
 package pro.sky.course_work_2.controller;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,10 +9,10 @@ import pro.sky.course_work_2.service.QuestionService;
 import java.util.Collection;
 
 @RestController
-public class QuestionController {
-    protected final QuestionService questionService;
+public abstract class QuestionController {
+    private final QuestionService questionService;
 
-    public QuestionController(@Qualifier("javaQuestionServiceImpl") QuestionService questionService) {
+    public QuestionController(QuestionService questionService) {
         this.questionService = questionService;
     }
 

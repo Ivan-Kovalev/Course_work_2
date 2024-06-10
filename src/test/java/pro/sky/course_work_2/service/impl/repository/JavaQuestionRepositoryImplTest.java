@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pro.sky.course_work_2.exception.QuestionException;
 import pro.sky.course_work_2.model.Question;
+import pro.sky.course_work_2.repository.impl.JavaQuestionRepositoryImpl;
+import pro.sky.course_work_2.repository.QuestionRepository;
 import pro.sky.course_work_2.test_utils.Constants;
 
 class JavaQuestionRepositoryImplTest {
